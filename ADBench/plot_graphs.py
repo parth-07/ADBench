@@ -107,7 +107,7 @@ def tool_names(graph_files):
 
     # Sort "Manual" to the front
     tool_names_ = sorted(tool_names_, key=lambda x: (not has_manual(x), x))
-    
+
     print(f"    Tools: {tool_names_}\n")
 
     return tool_names_
@@ -210,12 +210,12 @@ def print_messages():
 
     if do_help:
         ref_msg = f'''
-This script produces graphs that visualize benchmark. It also creates the 
+This script produces graphs that visualize benchmark. It also creates the
 following JSON files:
 
     "{PLOT_DATA_FILE_NAME}": contains all plotted data (times, tool names etc.)
     "{GRAPH_INDEX_FILE_NAME}": contains all test sizes
-    
+
 CMD arguments:
     --save
             if specified then the script saves produced graphs in PNG.
@@ -338,7 +338,7 @@ def values_and_styles(sorted_vals_by_tool):
 
 def generate_graph(idx, data, static_out_dir, plotly_out_dir):
     '''Generates the graph from the given data.
-    
+
     Args:
         idx: index of the figure.
         data (dictionary): plot data and information of the figure.
@@ -416,7 +416,7 @@ def generate_graph(idx, data, static_out_dir, plotly_out_dir):
     xlabel = "No. independent variables"
     if "hand" == figure_info["objective"] or "hand" in figure_info["test_size"]:
         xlabel = "No. correspondences"
-        
+
     pyplot.title(graph_name)
     pyplot.xlabel(xlabel)
     pyplot.ylabel(f"Running time (s) for [{figure_info['function_type'].capitalize()}]")
@@ -520,7 +520,7 @@ def get_all_graphs(in_dir):
 def get_argument_value(arg_name):
     '''Extracts cmd argument value. Note: we assume that the argument is present
     in the cmd args.'''
-    
+
     idx = sys.argv.index(arg_name) + 1
     if idx >= len(sys.argv):
         print(f"ERROR: the value of '{arg_name}' parameter is not specified! Stopping the script.")
@@ -533,7 +533,7 @@ def get_default_input_directory():
 
     adbench_dir = os.path.dirname(os.path.realpath(__file__))
     ad_root_dir = os.path.dirname(adbench_dir)
-    in_dir = os.path.join(ad_root_dir, "tmp")
+    in_dir = os.path.join(ad_root_dir, "ADBench/ftemp")
 
     return in_dir
 

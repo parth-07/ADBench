@@ -59,7 +59,7 @@ set(CMAKE_EXECUTABLE_SUFFIX .exe)
 set(CMAKE_SHARED_LIBRARY_PREFIX "")
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
-# Make all platforms use .dll extensions for executables 
+# Make all platforms use .dll extensions for executables
 # to simplify the use of modules.
 set(CMAKE_SHARED_LIBRARY_SUFFIX .dll)
 set(CMAKE_SHARED_MODULE_SUFFIX .dll)
@@ -81,8 +81,8 @@ option(ENABLE_TESTS "Enable tests" ON)
 
 if (${ENABLE_TESTS})
     # Get gtest and gmock packages
-    hunter_add_package(GTest)
-	
+    # hunter_add_package(GTest)
+
 	find_package (GTest CONFIG REQUIRED)
     find_package(GMock CONFIG REQUIRED)
 
