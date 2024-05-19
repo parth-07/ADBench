@@ -1,5 +1,8 @@
 project("ADBench_Modules")
 
+# add_subdirectory ("clad")
+add_subdirectory ("cladLatest")
+add_subdirectory ("cladLatestTBR")
 add_subdirectory ("manual")
 add_subdirectory ("manualEigen")
 add_subdirectory ("manualEigenVector")
